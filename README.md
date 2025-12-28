@@ -17,14 +17,14 @@ The system is built on a microservices architecture using **Docker**:
 
 ```mermaid
 graph LR
-    A[Data Ingestion] --> B[Validation (Pandera)]
-    B --> C[Drift Detection (Evidently)]
-    C --> D{Drift?}
-    D -- Yes --> E[Retrain Model]
-    D -- No --> F[Skip Training]
-    E --> G[Predict Next Day]
+    A["Data Ingestion"] --> B["Validation (Pandera)"]
+    B --> C["Drift Detection (Evidently)"]
+    C --> D{"Drift?"}
+    D -- Yes --> E["Retrain Model"]
+    D -- No --> F["Skip Training"]
+    E --> G["Predict Next Day"]
     F --> G
-    G --> H[Email Notification]
+    G --> H["Email Notification"]
 ```
 
 ## 🛠️ Components & Technologies
