@@ -1,0 +1,13 @@
+docker-compose run airflow-webserver airflow db init
+docker-compose run airflow-webserver airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin
+docker-compose up -d
+
+executer cette cmd si un container failed on creation : 
+    docker-compose run airflow-webserver airflow db init
+
+docker-compose down
+
+pour executer le model avec mlflow
+    docker-compose exec airflow-scheduler bash
+    python /opt/airflow/dags/train_model_script.py
+

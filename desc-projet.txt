@@ -1,0 +1,11 @@
+End-to-End MLOps Pipeline for Time-Series Forecasting (Energy or Finance)
+Build a full workflow that forecasts electricity load or stock prices.
+The system includes:
+Data extraction task (Airflow DAG: pull from API/s3)
+Data validation task using Great Expectations or Pandera
+Kubeflow Pipeline that:
+	trains a PyTorch LSTM/Transformer model
+	performs HPO using Kubeflow Katib
+	registers model in MLflow
+Airflow task triggers batch inference daily
+Model drift detection using EvidentlyAI
